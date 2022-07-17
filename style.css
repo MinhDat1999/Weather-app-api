@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Ubuntu&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url(Image/light/denys-nevozhai-duo-xV0TU7s-unsplash.jpg);
+}
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h3 {
+  font-weight: 400;
+}
+.weather-app {
+  min-height: 90vh;
+  background-image: url(Image/light/denys-nevozhai-duo-xV0TU7s-unsplash.jpg);
+  width: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.589);
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.5s;
+
+  opacity: 1;
+}
+.weather-app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2em 3em 4em 3em;
+}
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city-time,
+.temp,
+.weather {
+  margin: 0 1rem;
+  transition: all 0.5s;
+}
+.hide {
+  opacity: 1;
+}
+.city-time h1 {
+  margin: 0;
+  margin-bottom: 0.2em;
+  font-size: 3em;
+}
+.temp {
+  font-size: 7em;
+  margin: 0;
+}
+.weather img {
+  display: block;
+  margin: 0.5em 0;
+}
+.panel {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 40%;
+  background: rgba(110, 110, 110, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: rgba(255, 255, 255, 0.18);
+  padding: 3em 2em;
+  overflow: scroll;
+}
+.panel::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+.panel form {
+  margin-bottom: 3em;
+}
+.submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+
+  padding: 2.1em;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  background: #fa6d1b;
+}
+.submit:hover {
+  background-color: #fff !important;
+  color: #000;
+}
+.search {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 90%;
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+}
+.panel ul {
+  list-style: none;
+  padding: 0 0 1em 0;
+  border-bottom: 1px solid #ccc;
+
+  margin: 2em 0;
+}
+.erro {
+  color: #fa6d1b;
+  font-size: 12px;
+  font-style: italic;
+}
+.panel ul li {
+  color: #ccc;
+  margin: 2.5em 0;
+}
+.panel ul h4 {
+  margin: 3em 0;
+}
+.city {
+  display: block;
+  cursor: pointer;
+}
+.city:hover {
+  color: #fff;
+}
+
+.detail li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Reponsive **/
+@media screen and (max-width: 800px) {
+  .panel,
+  .container {
+    position: relative;
+    width: 100%;
+    top: initial;
+  }
+  .weather-app {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1025px) {
+  body {
+    display: block;
+
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .weather-app {
+    width: 90%;
+    margin: 5% auto;
+    min-height: 700px;
+  }
+  .panel {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 769px) {
+  .panel {
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+  }
+  .panel ul {
+    padding: 0;
+    margin: 0;
+  }
+  @media screen and (max-width: 500px) {
+    html {
+      font-size: 12px;
+    }
+    .submit {
+      padding: 1.5em;
+    }
+    .search {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 378px) {
+    .weather-app {
+      font-size: 90%;
+      min-height: 40em;
+    }
+  }
+}
