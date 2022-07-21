@@ -105,7 +105,7 @@ btnsub.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("aaa");
   errormasage.innerText = "";
-  e.preventDefault();
+
   changeWeatherAPI();
   inputSearch.value = "";
 });
